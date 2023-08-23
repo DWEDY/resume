@@ -5,26 +5,33 @@
 
 <div>
     {{#with main}}
+
     <main>
         <section>
+            {{> title data="My education" big=true}}
+            <ul>
+                {{#each educations}}
+                <li>
+                    {{name}}
 
-            {{> title data=summary.title big=true}}
+                    {{#unless isEnd}}(ще в процесі){{/unless}}
 
-            <div>
-                <p>{{summary.text}}</p>
-            </div>
+                </li>
+                {{/each}}
+            </ul>
         </section>
 
-        {{#with experience}}
         <section>
-            <div>
-                <h2>{{title}}</h2>
-            </div>
-            <div>
-                <p>{{text}}</p>
-            </div>
+            {{> title data="My certificates" big=true}}
+            <ul>
+                {{#each certificates}}
+                <li>
+                    {{name}} ({{id}})
+                </li>
+                {{/each}}
+            </ul>
         </section>
-        {{/with}}
+
     </main>
     {{/with}}
 </div>
