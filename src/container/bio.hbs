@@ -1,0 +1,147 @@
+<div>
+    <h1>
+        <u>Biography of {{name}}</u>
+    </h1>
+
+    <main>
+        <section>
+            <p>
+            <h1>{{name}}</h1>
+            Was born in {{birthdate}}, in the city {{birthplace}}.
+            <br>
+            Died in {{deathdate}}, in the city {{deathplace}}.
+            </p>
+            <b>{{name}}</b> was {{nationality}} by nationality.
+
+            <p>
+                <b>Occupation</b> {{occupation}}.
+            <p>
+                <b>Known for</b> {{#each known_for}}
+                {{this}},
+                {{/each}}
+            </p>
+
+            </p>
+
+            {{#each education}}
+            <b>He received</b> a {{degree}}
+            in the field of {{field}},
+            from the {{ institution}} in
+            {{year}} year.
+            {{/each}}
+            <p>
+                <br>
+
+            <h3><i>List of scientific publications:</i></h3>
+
+            <section>
+                <ul>
+                    <li>
+                        <b>Notable publications</b> {{notable_publications.[0].title}}.
+                        <br>
+                        <b>Year</b> {{notable_publications.[0].year}}.
+                        <br>
+                        <b>Publisher</b> {{notable_publications.[0].publisher}}.
+                    </li>
+                    <br>
+
+                    <li>
+                        <b>Notable publications</b> {{notable_publications.[1].title}}.
+                        <br>
+                        <b>Year</b> {{notable_publications.[1].year}}.
+                        <br>
+                        <b>Publisher</b> {{notable_publications.[1].publisher}}.
+                    </li>
+                </ul>
+            </section>
+            </p>
+
+            <p>
+
+                <br>
+
+            <h3><i> Relationships:</i></h3>
+            During lifetime, <i>{{name}}</i> got married twice.
+            <br>
+            <br>
+
+            His {{partners.[0].relationship}} was to <i>{{partners.[0].name}}</i>,
+            <br>
+            {{partners.[0].years}} years.
+            <br>
+            <br>
+            And {{name}} {{partners.[1].relationship}} <i>{{partners.[1].name}}</i>,
+            <br>
+            {{partners.[0].years}} years.
+
+            </p>
+
+            <br>
+            <hr>
+
+            <h2>Award</h2>
+            <br>
+            {{#each awards}}
+            <strong>{{title}}</strong>,
+            <br>
+            {{year}} year,
+            <br>
+            {{description}}.
+            {{/each}}
+
+            <hr>
+            <br>
+
+            <b>Influences by</b>
+            <ul>
+                {{#each influences}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <br>
+            <b>Influenced by</b>
+            <ul>
+                {{#each influenced}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+
+            <h3><i>Quotes:</i></h3>
+
+            <br>
+
+            {{#each quotes}}
+            <li>"{{this}}"</li>
+            {{/each}}
+
+            <br>
+            <hr>
+
+            <h2>Major Discoveries</h2>
+            {{#each major_discoveries}}
+            <i><b>{{title}}</b></i>,
+            {{year}} year,
+            <br>
+            {{description}}
+            {{/each}}
+
+            <hr>
+            <br>
+
+            <h2>Contributions</h2>
+            {{#with contributions}}
+            <i><b>{{title}}</b></i>:
+            <br>
+            <br>
+            <b>Description:</b> {{description}}
+            {{year}} year,
+            <br>
+            <br>
+            <i>The field of {{field}}</i>.
+            {{/with}}
+
+            <hr>
+
+        </section>
+    </main>
+</div>
