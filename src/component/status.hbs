@@ -1,0 +1,12 @@
+{{!-- <p>
+    <b>Status </b> ( <u>{{status}}</u> )
+</p> --}}
+
+<div>
+    <b>Status </b>
+    {{#if status}}
+    <h2>{{status}}</h2>
+    {{else}}
+    <h3>{{status}}</h3>
+    {{/if}}
+</div>
