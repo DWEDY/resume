@@ -1,0 +1,181 @@
+<div>
+    <main>
+        <section>
+
+            {{#with program}}
+
+            {{#with excursion}}
+
+
+            <h1>
+                <i>{{name}}</i>
+            </h1>
+            {{#with location}}
+            <p>A tour to the cultural capital of {{country}}, {{city}}.</p>
+            {{/with}}
+
+            <em>
+                <small>{{date}}</small>
+            </em>
+
+            <br>
+            <hr>
+            <br>
+
+            {{#each program}}
+
+            <table>
+
+                <tr>
+                    <th colspan="5">
+                        <h3>
+                            <i>{{name}}</i>
+                        </h3>
+                        <hr>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <i>
+                            <b>Type:</b>
+                        </i>
+                    </td>
+
+                    <td>{{type}}</td>
+                    <td>{{deatails}}</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <i>
+                            <b>Duration:</b>
+                        </i>
+                    </td>
+                    <td>{{duration}} hours</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <i>
+                            <b>Details:</b>
+                        </i>
+                    </td>
+                    <td>
+                        {{#with details}}
+
+                        {{#with museum}}
+                        <strong>
+                            {{name}}
+                            <br>
+                        </strong>
+
+                        {{#with location}}
+                        <small>
+                            {{address}},
+                            {{city}},
+                            {{country}}.
+                        </small>
+                        {{/with}}
+
+                </tr>
+                <td>
+                    <i>
+                        <b>Exhibits:</b>
+                    </i>
+                </td>
+
+                <td>
+                    {{#each exhibits}}
+                <td>
+                    <strong>
+                        {{name}}
+                    </strong>
+                    Description: {{description}}
+                    <small>
+                        {{> program}}
+                    </small>
+                </td>
+
+
+                {{/each}}
+                </td>
+                </tr>
+
+                {{/with}}
+
+                {{/with}}
+
+
+                {{#with details}}
+
+                {{#with venue}}
+                <strong>
+                    {{name}}
+                    <br>
+                </strong>
+
+                {{#with location}}
+                <small>
+                    {{address}},
+                    {{city}},
+                    {{country}}.
+                </small>
+                {{/with}}
+
+                {{/with}}
+
+                <tr>
+                    <td colspan="4">
+                        {{#each performers}}
+                        <i>
+                            <b>Performer:</b>
+                        </i>
+
+                        Name: {{name}}
+                        <br>
+                        Genre: {{type}}
+                        <br>
+
+                        {{/each}}
+                    </td>
+                </tr>
+
+                <td>
+                    <tr>
+                        {{#with guide}}
+                        <td colspan="2">
+                            <i>
+                                <b>Guide:</b>
+                            </i>
+                        </td>
+                        <td>
+                            Name:
+                            <strong>
+                                {{name}}
+                                <br>
+                            </strong>
+                            Language: <b>{{language}}</b>
+                            <br>
+                            <small>
+                                Rating: <b>{{rating}}</b>
+                            </small>
+                        </td>
+
+                        {{/with}}
+                    </tr>
+                </td>
+
+                {{/with}}
+
+            </table>
+
+            {{/each}}
+
+            {{/with}}
+
+            {{/with}}
+
+        </section>
+    </main>
+</div>
