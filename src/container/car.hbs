@@ -1,0 +1,446 @@
+<body>
+    <main>
+
+        <div class="card mb-3" style="max-width: 1000px;">
+
+            <div class="row g-0">
+
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">{{make}} {{model}}</h4>
+                        <p class="card-text">{{make}} {{model}} {{color}} color, year of release {{year}}.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-18">
+                    <img src="https://www.motortrend.com/uploads/sites/10/2023/01/2022-toyota-camry-le-sedan-angular-front.png?fit=around%7C875:492.1875"
+                        class="img-fluid rounded-start" alt=>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card mb-3" style="max-width: 1000px;">
+
+            <div class="row g-0">
+
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><span>Interior</span></h5>
+
+                        <p class="card-text">
+                            {{#with features}}
+                        <div>
+                            {{#with interior}}
+                            <div>
+
+                                {{#with seats}}
+                                <div class="card" style="width: 18rem;">
+
+                                    <ul class="list-group list-group-flush">
+                                        <div class="card-header">
+                                            <span>Seats</span>
+                                        </div>
+
+                                        <div class="col-md-18">
+                                            <img src="https://www.motortrend.com/uploads/sites/10/2023/01/2022-toyota-camry-le-sedan-rear-seat.png?fit=around%7C1000:625"
+                                                class="img-fluid rounded-start" alt=>
+                                        </div>
+
+                                        <li class="list-group-item"><span>Material:</span> {{material}}</li>
+                                        <li class="list-group-item"><span>Color:</span> {{color}}</li>
+                                        <li class="list-group-item">{{>car}}</li>
+                                    </ul>
+
+                                </div>
+                                {{/with}}
+
+                                <br>
+
+                                {{#with dashboard}}
+                                <div class="card" style="width: 18rem;">
+
+                                    <ul class="list-group list-group-flush">
+                                        <div class="card-header">
+                                            <span>Dashboard</span>
+                                        </div>
+
+                                        <div class="col-md-18">
+                                            <img src="https://www.motortrend.com/uploads/sites/10/2023/01/2022-toyota-camry-le-sedan-audio-system.png?fit=around%7C1000:625"
+                                                class="img-fluid rounded-start" alt=>
+                                        </div>
+
+                                        <li class="list-group-item"><span>Material:</span> {{material}}</li>
+                                        <li class="list-group-item"><span>Color:</span> {{color}}</li>
+                                        <li class="list-group-item">
+                                            {{#with display}}
+                                            <div>
+
+                                                <div class="card" style="width: 13rem;">
+
+                                                    <ul class="list-group list-group-flush">
+                                                        <div class="card-header">
+
+                                                            <span>Display</span>
+
+                                                        </div>
+                                                        <li class="list-group-item"><span>Type:</span> {{type}}</li>
+                                                        <li class="list-group-item"><span>Size:</span> {{size}}</li>
+                                                        <li class="list-group-item"><span>Resolution:</span>
+                                                            {{resolution}}
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            {{>car_touchscreen}}
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+
+                                            </div>
+                                            {{/with}}
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                {{/with}}
+
+
+                                <br>
+
+                            </div>
+                            {{#with audio}}
+                            <div class="card" style="width: 18rem;">
+
+                                <ul class="list-group list-group-flush">
+                                    <div class="card-header">
+
+                                        <span>Audio</span>
+
+                                    </div>
+
+                                    <li class="list-group-item"><span>Size:</span> {{system}}</li>
+                                    <li class="list-group-item"><span>Resolution:</span>
+                                        {{speakers}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        {{>car_audio}}
+                                    </li>
+                                </ul>
+
+                            </div>
+                            {{/with}}
+
+                            {{/with}}
+                        </div>
+                        </p>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="card mb-3" style="max-width: 1000px;">
+
+            <div class="row g-0">
+
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><span>Exterior</span></h5>
+
+                        <p class="card-text">
+
+                            {{#with exterior}}
+                        <div>
+
+                            {{#with wheels}}
+                            <div class="card" style="width: 18rem;">
+
+                                <ul class="list-group list-group-flush">
+                                    <div class="card-header">
+
+                                        <span>Wheels</span>
+                                        <div class="col-md-18">
+                                            <img src="https://www.motortrend.com/uploads/sites/10/2023/01/2022-toyota-camry-le-sedan-wheel-cap.png?fit=around%7C695:434.375"
+                                                class="img-fluid rounded-start" alt=>
+                                        </div>
+                                    </div>
+
+                                    <li class="list-group-item"><span>Size:</span> {{size}}</li>
+                                    <li class="list-group-item"><span>Type:</span>
+                                        {{type}}
+                                    </li>
+                                    <li class="list-group-item"><span>Color:</span>
+                                        {{color}}
+                                    </li>
+                                </ul>
+
+                            </div>
+                            {{/with}}
+
+                            <br>
+
+                            {{#with headlights}}
+                            <div class="card" style="width: 18rem;">
+
+                                <ul class="list-group list-group-flush">
+                                    <div class="card-header">
+
+                                        <span>Headlights</span>
+                                        <div class="col-md-18">
+                                            <img src="https://www.motortrend.com/uploads/sites/10/2023/01/2022-toyota-camry-le-sedan-headlight.png?fit=around%7C1000:625"
+                                                class="img-fluid rounded-start" alt=>
+                                        </div>
+                                    </div>
+
+                                    <li class="list-group-item"><span>Type:</span> {{type}}</li>
+                                    <li class="list-group-item"><span>Brightness:</span>{{brightness}}
+                                    </li>
+                                    <li class="list-group-item">{{>car_light}}</li>
+                                </ul>
+
+                            </div>
+                            {{/with}}
+
+                            <br>
+
+                            {{#with sunroof}}
+                            <div class="card" style="width: 18rem;">
+
+                                <ul class="list-group list-group-flush">
+                                    <div class="card-header">
+
+                                        <span>Sunroof</span>
+
+                                    </div>
+
+                                    <li class="list-group-item"><span>Type:</span> {{type}}</li>
+                                    <li class="list-group-item"><span>Size:</span> {{size}}</li>
+                                    <li class="list-group-item">{{>car_light}}</li>
+                                </ul>
+
+                            </div>
+
+                            {{/with}}
+
+                        </div>
+
+                        {{/with}}</p>
+
+                        {{/with}}</p>
+
+    </main>
+
+    <main>
+        {{#with features}}
+        <div class="card mb-3" style="max-width: 1000px;">
+
+            <div class="row g-0">
+
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><span>Safety</span></h5>
+
+                        <p class="card-text">
+
+                            {{#with safety}}
+                        <div>
+
+                            {{#with airbags}}
+                            <div class="card" style="width: 18rem;">
+
+                                <ul class="list-group list-group-flush">
+                                    <div class="card-header">
+
+                                        <span>Airbags</span>
+
+                                    </div>
+
+                                    <li class="list-group-item"><span>Size:</span> {{front}}</li>
+                                    <li class="list-group-item"><span>Size:</span> {{side}}</li>
+                                    <li class="list-group-item"><span>Size:</span> {{knee}}</li>
+                                    <li class="list-group-item"><span>Size:</span> {{rear}}</li>
+                                </ul>
+
+                            </div>
+                            {{/with}}
+
+                            <br>
+
+                            {{#with assistance}}
+                            <div class="card" style="width: 18rem;">
+
+                                <ul class="list-group list-group-flush">
+                                    <div class="card-header">
+
+                                        <span>Assistance</span>
+
+                                    </div>
+
+                                    <li class="list-group-item"> {{>car_assistance}}</li>
+
+                                </ul>
+
+                            </div>
+                            {{/with}}
+
+                        </div>
+
+                        {{/with}}
+                        </p>
+
+                        {{/with}}
+
+    </main>
+
+    <main>
+
+        <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+
+                    <img src="https://www.motortrend.com/uploads/sites/10/2023/01/2022-toyota-camry-le-sedan-engine.png?fit=around%7C709.0999999999999:443.18749999999994"
+                        class="card-img" alt=>
+
+                </div>
+
+
+
+                <div class="col-md-8">
+                    <div class="card-body">
+
+                        <h5 class="card-title"><span>Engine</span></h5>
+
+                        <p class="card-text">
+                            {{#with engine}}
+
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item"><span>Type:</span> {{type}}</li>
+                                <li class="list-group-item"><span>Displacement:</span> {{displacement}}</li>
+                                <li class="list-group-item"><span>Horsepower:</span> {{horsepower}}</li>
+                                <li class="list-group-item"><span>Torque:</span> {{torque}}</li>
+
+                                <div>
+                                    {{#with transmission}}
+                                    <li class="list-group-item"><span>Type:</span> {{type}}</li>
+                                    <li class="list-group-item"><span>Gears:</span> {{gears}}</li>
+                                    {{/with}}
+                                </div>
+
+                            </ul>
+                        </div>
+
+                        {{/with}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <main>
+
+        <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row g-0">
+
+
+                <div class="col-md-8">
+                    <div class="card-body">
+
+                        <h5 class="card-title"><span>Fuel Economy</span></h5>
+
+                        <p class="card-text">
+                            {{#with fuel_economy}}
+
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item"><span>City:</span> {{city}}</li>
+                                <li class="list-group-item"><span>Highway:</span> {{highway}}</li>
+                                <li class="list-group-item"><span>Combined:</span> {{combined}}</li>
+
+                            </ul>
+                        </div>
+
+                        {{/with}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <main>
+
+        <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row g-0">
+
+                <div class="card-body">
+                    <h5 class="card-title"><span>Price</span></h5>
+                </div>
+
+                <div class="col-md-1000">
+
+
+                    <div class="card-group">
+                        <div class="card">
+                            <img src="https://www.motortrend.com/uploads/2021/12/2022_Toyota_Camry_XSE_Hybrid_Silver-Black_018.jpg?fit=around%7C220:120"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+
+                                <p class="card-text">
+                                    {{#with price}}
+
+                                <div class="card" style="width: 11rem;">
+                                    <ul class="list-group list-group-flush">
+
+                                        <li class="list-group-item"><span>Base:</span> {{base}}$</li>
+                                        <li class="list-group-item"><span>Destination:</span> {{destination}}$</li>
+
+                                        {{#with options}}
+
+                                        <li class="list-group-item"><span>Navigation:</span> {{navigation}}$</li>
+                                        <li class="list-group-item"><span>Moonroof:</span> {{moonroof}}$</li>
+                                        <li class="list-group-item"><span>Paint:</span> {{premium_paint}}$</li>
+
+                                        {{/with}}
+
+                                        <li class="list-group-item"><span>Total:</span> {{total}}$</li>
+
+                                    </ul>
+                                </div>
+
+                                {{/with}}</p>
+
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://www.motortrend.com/uploads/2021/12/2022_Toyota_Camry_XSE_Hybrid_Silver-Black_001.jpg?fit=around%7C1000:625"
+                                class="card-img-top" alt=>
+                            <img src="https://www.motortrend.com/uploads/2021/12/2022_Toyota_Camry_XSE_Hybrid_Silver-Black_030.jpg?fit=around%7C220:120"
+                                class="card-img-top" alt=>
+                        </div>
+                        <div class="card">
+                            <img src="https://www.motortrend.com/uploads/2021/12/2022_Toyota_Camry_XSE_Hybrid_Silver-Black_012.jpg?fit=around%7C1000:625"
+                                class="card-img-top" alt=>
+                            <img src="https://www.motortrend.com/uploads/2021/12/2022_Toyota_Camry_XSE_Hybrid_Silver-Black_024.jpg?fit=around%7C220:120"
+                                class="card-img-top" alt=>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+</body>
