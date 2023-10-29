@@ -1,0 +1,156 @@
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <h2><span class="badge bg-primary">{{name}}</span></h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search friends" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <h5>Users</h5>
+    </section>
+
+    {{#each users}}
+    <main>
+        <section>
+            <div class="card mb-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">Gender: {{gender}}<br>
+                        Age: {{age}}</p>
+                    <small>
+                        <i>Id:{{id}}</i>
+                    </small>
+
+                    <br>
+                    <br>
+
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-auto-close="outside">
+                            Friends
+                        </button>
+
+                        <form class="dropdown-menu p-4">
+                            {{#each friends}}
+                            <div class="mb-3">
+                                <label for="exampleDropdownFormEmail2" class="form-label">
+                                    <h6 class="card-title">{{name}}</h6>
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleDropdownFormPassword2" class="form-label">Gender: {{gender}}</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleDropdownFormPassword2" class="form-label">Age: {{age}}</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleDropdownFormPassword2" class="form-label"><i>Id:{{id}}</i></label>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Mutual Friends
+                                </button>
+
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">
+                                            {{#each mutual_friends}}
+                                            <h6 class="card-title">{{name}}</h6>
+                                            Gender: {{gender}}
+                                            Age: {{age}}
+                                            <i>Id:{{id}}</i>
+                                            {{/each}}
+                                        </a></li>
+                                </ul>
+                            </div>
+
+                            {{#each groups}}
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">
+                                    <h6> {{name}}</h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Description:</h6>
+                                    <p>{{description}}</p>
+                                    <i>Id:{{id}}</i>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Members:</h6>
+                                    <br>
+                                    {{#each members}}
+                                    <span>Name: {{name}}</span><br>
+                                    Gender: {{gender}}<br>
+                                    Age: {{age}}<br>
+                                    <i>Id:{{id}}</i><br>
+                                    <br>
+                                    {{/each}}
+                                </li>
+                            </ul>
+                            {{/each}}
+                            {{/each}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    {{/each}}
+
+    <section>
+        {{#each users}}
+        {{#each groups}}
+        <ul class="list-group">
+            <li class="list-group-item active" aria-current="true">
+                <h6> {{name}}</h6>
+            </li>
+            <li class="list-group-item">
+                <h6>Description:</h6>
+                <p>{{description}}</p>
+                <i>Id:{{id}}</i>
+            </li>
+            <li class="list-group-item">
+                <h6>Members:</h6>
+                <br>
+                {{#each members}}
+                <span>Name: {{name}}</span><br>
+                Gender: {{gender}}<br>
+                Age: {{age}}<br>
+                <i>Id:{{id}}</i><br>
+                <br>
+                {{/each}}
+            </li>
+        </ul>
+        {{/each}}
+        {{/each}}
+    </section>
+</body>
