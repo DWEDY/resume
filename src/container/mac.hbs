@@ -1,0 +1,223 @@
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Shop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Category
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">{{category}}</a></li>
+                                <li><a class="dropdown-item" href="#">Desktop PCs & Accessories</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Servers & Accessories</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <main>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="https://www.alternate.be/p/600x600/3/2/Apple_MacBook_Pro_16___2023__16_2__laptop@@1895423.jpg"
+                        class="d-block w-100" alt=>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{name}}</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://www.alternate.be/p/600x600/3/2/Apple_MacBook_Pro_16___2023__16_2__laptop@@1895423_1.jpg"
+                        class="d-block w-100" alt=>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{description}}</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.alternate.be/p/600x600/3/2/Apple_MacBook_Pro_16___2023__16_2__laptop@@1895423_2.jpg"
+                        class="d-block w-100" alt=>
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://content2.rozetka.com.ua/goods/images/big/328968553.jpg" class="d-block w-100"
+                        alt=>
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://content2.rozetka.com.ua/goods/images/big/328968557.jpg" class="d-block w-100"
+                        alt=>
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.alternate.be/p/600x600/3/2/Apple_MacBook_Pro_16___2023__16_2__laptop@@1895423_3.jpg"
+                        class="d-block w-100" alt=>
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </main>
+
+    {{#with features}}
+    <section>
+        <h5>Specifications</h5>
+    </section>
+    {{#with processor}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Processor</span> {{brand}} {{model}}</li>
+            <li class="list-group-item"><span>Speed:</span> {{speed}}</li>
+            <li class="list-group-item"><span>Cores:</span> {{cores}}</li>
+            <li class="list-group-item"><span>Cache:</span> {{cache}}</li>
+        </ul>
+    </section>
+    {{/with}}
+    {{#with memory}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Memory</span></li>
+            <li class="list-group-item"><span>Speed:</span> {{type}}</li>
+            <li class="list-group-item"><span>Cores:</span> {{size}}</li>
+            <li class="list-group-item"><span>Cache:</span> {{speed}}</li>
+        </ul>
+    </section>
+    {{/with}}
+    {{#with storage}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Storage</span></li>
+            <li class="list-group-item"><span>Speed:</span> {{type}}</li>
+            <li class="list-group-item"><span>Cores:</span> {{size}}</li>
+        </ul>
+    </section>
+    {{/with}}
+    {{#with display}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Display</span></li>
+            <li class="list-group-item"><span>Size:</span> {{size}}</li>
+            <li class="list-group-item"><span>Resolution:</span> {{resolution}}</li>
+            <li class="list-group-item"><span>Technology:</span> {{technology}}</li>
+            <li class="list-group-item"><span>Color space:</span> {{color_space}}</li>
+            <li class="list-group-item"><span>Brightness:</span> {{brightness}}</li>
+            <li class="list-group-item"><span>Refresh rate:</span> {{refresh_rate}}</li>
+        </ul>
+    </section>
+    {{/with}}
+    {{#with graphics}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Graphics</span></li>
+            <li class="list-group-item"><span>Brand:</span> {{brand}}</li>
+            <li class="list-group-item"><span>Model:</span> {{model}}</li>
+            <li class="list-group-item"><span>Memory:</span> {{memory}}</li>
+        </ul>
+    </section>
+    {{/with}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Ports</span></li>
+
+            {{#each ports}}
+            <li class="list-group-item"><span>Type:</span> {{type}}</li>
+            <li class="list-group-item"><span>Count:</span> {{count}}</li>
+            {{#each features}}<li class="list-group-item"><small><i>Features:</i></small> {{this}}</li>{{/each}}
+            {{/each}}
+            {{!-- <li class="list-group-item disabled" aria-disabled="true"><span>Features:</span></li> --}}
+        </ul>
+    </section>
+    {{#with battery}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Battery</span></li>
+            <li class="list-group-item"><span>Type:</span> {{type}}</li>
+            <li class="list-group-item"><span>Capacity:</span> {{capacity}}</li>
+            <li class="list-group-item"><span>Life:</span> {{life}}</li>
+        </ul>
+    </section>
+    {{/with}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Weight: {{weight}}</span></li>
+        </ul>
+    </section>
+    {{#with dimensions}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Dimensions</span></li>
+            <li class="list-group-item"><span>Height:</span> {{height}}</li>
+            <li class="list-group-item"><span>Width:</span> {{width}}</li>
+            <li class="list-group-item"><span>Depth:</span> {{depth}}</li>
+        </ul>
+    </section>
+    {{/with}}
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Operating System:
+                    {{operating_system}}</span>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true"><span>Accessories</span></li>
+
+            {{#each accessories}}
+            <li class="list-group-item">
+                {{name}}<br><span>Count:</span> {{price}}
+            </li>
+            {{/each}}
+
+        </ul>
+    </section>
+    {{/with}}
+</body>
