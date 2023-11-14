@@ -1,0 +1,54 @@
+<div>
+  <hr class="my-5">
+</div>
+
+<footer>
+  <div class="nav row g-3">
+    {{#each footer}}
+
+    <div class="nav-item col-2">
+      <a href="{{this.[0].href}}" class="nav-link btn btn-link py-2">{{this.[0].text}}</a>
+    </div>
+
+    {{/each}}
+  </div>
+
+  <div class="nav row g-3">
+    {{#each footer}}
+
+    <div class="nav-item col-2">
+      <a href="{{this.[1].href}}" class="nav-link btn btn-link py-2">{{this.[1].text}}</a>
+    </div>
+
+    {{/each}}
+  </div>
+
+  <div class="nav row g-3">
+    {{#each footer}}
+
+    <div class="nav-item col-2">
+      <a href="{{this.[2].href}}" class="nav-link btn btn-link py-2">{{this.[2].text}}</a>
+    </div>
+
+    {{/each}}
+  </div>
+
+  <div class="nav row g-3">
+    {{#each footer}}
+
+    <div class="nav-item col-2">
+      <a href="{{this.[3].href}}" class="nav-link btn btn-link disabled py-2">{{this.[3].text}}</a>
+    </div>
+
+    {{/each}}
+  </div>
+
+
+
+  {{!-- <div class="nav-item col-2">
+    <a href="{{this.[1].href}}" class="btn btn-link">{{this.[1].text}}</a>
+  </div> --}}
+
+
+
+</footer>
