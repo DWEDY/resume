@@ -30,161 +30,217 @@
     </div>
 
 
-    <section class="p-2">
+    <section class="mt-5">
       {{#with newsBlock}}
-      <h1 class="text-center pb-5">{{title}}</h1>
-
+      <div class="display-4 text-center my-3">{{title}}</div>
 
       <div class="row g-1">
-
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[0].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_merge}}
-          </h6>
-
+        {{#each cards}}
+        <div class="card text-bg-dark col-3 list-group-flush">
           <div class="card-body">
-            <p>{{cards.[0].description}}</p>
+            <div class="card-header">
+              <div class="card-title">{{title}}
+                <img src="/svg/newspaper.svg">
+
+                {{#if isNew}}
+                <div class="badge rounded-pill text-bg-success">
+                  NEW
+                </div>
+                {{/if}}
+                {{#if isTop}}
+                <div class="badge rounded-pill text-bg-danger">
+                  TOP
+                </div>
+                {{/if}}
+
+              </div>
+            </div>
+
+            <div>
+              {{description}}
+            </div>
           </div>
         </div>
+        {{/each}}
+        {{!-- <div>
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[0].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_0}}
+            </h6>
 
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[0].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_merge}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[0].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[0].description}}</p>
+            </div>
           </div>
-        </div>
 
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[1].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_1}}
+            </h6>
 
-
-        {{!-- <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[0].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_0}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[0].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[1].description}}</p>
+            </div>
           </div>
-        </div>
 
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[2].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_2}}
+            </h6>
 
-
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[1].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_1}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[1].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[2].description}}</p>
+            </div>
           </div>
-        </div>
 
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[3].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_3}}
+            </h6>
 
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[2].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_2}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[2].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[3].description}}</p>
+            </div>
           </div>
-        </div>
 
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[4].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_4}}
+            </h6>
 
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[3].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_3}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[3].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[4].description}}</p>
+            </div>
           </div>
-        </div>
 
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[5].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_5}}
+            </h6>
 
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[4].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_4}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[4].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[5].description}}</p>
+            </div>
           </div>
-        </div>
 
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[6].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_6}}
+            </h6>
 
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[5].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_5}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[5].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[6].description}}</p>
+            </div>
           </div>
-        </div>
 
+          <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
+            <h6 class="card-header text-bg-dark">
+              {{cards.[7].title}}
+              <img src="/svg/newspaper.svg">{{> newsBlock_7}}
+            </h6>
 
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[6].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_6}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[6].description}}</p>
-          </div>
-        </div>
-
-
-        <div class="card col-3 text-bg-secondary row gx-0 list-group-flush">
-          <h6 class="card-header text-bg-dark">
-            {{cards.[7].title}}
-            <img src="/svg/newspaper.svg">{{> newsBlock_7}}
-          </h6>
-
-          <div class="card-body">
-            <p>{{cards.[7].description}}</p>
+            <div class="card-body">
+              <p>{{cards.[7].description}}</p>
+            </div>
           </div>
         </div> --}}
-
       </div>
 
       {{/with}}
     </section>
 
+    <div class="my-5">
+      <hr>
+    </div>
 
-
-    <section>
-      {{#with goodsBlock}}
-
-      {{> goodsBlock}}
-
-      {{cards.[0].image}}
-
-      {{/with}}
-    </section>
-
-
-
+    {{#with goodsBlock}}
     <section>
 
+      <div class="row g-1">
+        <div class="row">
+
+          <div class="mb-5">
+            <div class="nav nav-tabs">
+              {{#each tabs}}
+
+              <div class="nav-item">
+                <a href="#"
+                  class="nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled{{/if}}">{{text}}</a>
+              </div>
+              {{/each}}
+
+            </div>
+          </div>
+
+          <div class="row g-1">
+            {{#each cards}}
+
+            <div class="card text-bg-light col-4 list-group-flush p-0">
+              <img class="card-img-top list-group-flush" src="{{image}}">
+              <div class="card-body">
+
+                <div class="card-title">{{title}} {{isHot}}
+                  {{isNew}}
+
+                </div>
+
+                <div>
+                  {{description}}
+                </div>
+              </div>
+            </div>
+
+            {{/each}}
+          </div>
     </section>
+    {{/with}}
+
+    {{#with subscribe}}
+    <section class="card text-bg-dark mt-5">
+      <div>
+        <h2 class="card-title">{{header}}</h2>
+      </div>
+
+      <div class="card-body">
 
 
+        <p>{{description}}</p>
+        {{#each buttons}}
+        <a class="btn btn-primary" href="{{link}}">{{text}}</a>
 
-    <section>
+        {{/each}}
+      </div>
 
     </section>
+    {{/with}}
+
+
+
+    {{#with service}}
+    <section class="card text-bg-success text-center mt-5">
+      <div>
+        <h2 class="card-title">{{title}}</h2>
+      </div>
+
+      <div class="card-body">
+
+
+        <p>{{description}}</p>
+        {{#each buttons}}
+        <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+
+        {{/each}}
+      </div>
+
+    </section>
+    {{/with}}
 
   </main>
 </body>
