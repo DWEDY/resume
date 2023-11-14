@@ -1,16 +1,19 @@
 <main>
-
-    {{#with heading}}
     <section>
-        {{#with main}}
-        <p class="display-2 text-center">{{title}}</p>
-        <p class="text-center">{{text}}</p>
-
-        {{#with button_text}}
+        {{#with heading}}
         <div class="card">
             <div class="card-body">
-                <p class="card-text">{{solid}}</p>
-                <a class="btn btn-primary">{{outline}}</a>
+                {{#with main}}
+                <h1>{{title}}</h1>
+                <p>{{text}}</p>
+
+                {{#with button_text}}
+                <p>
+                    <a class="btn btn-primary">
+                        {{solid}}
+                    </a>
+                </p>
+                <button class="btn btn-outline-primary">{{outline}}</button>
             </div>
         </div>
         {{/with}}
@@ -20,31 +23,37 @@
 
     <section>
         {{#with second}}
-        <p class="display-2 text-center">{{title}}</p>
-        <p class="text-center">{{text}}</p>
-
-        {{#with button_text}}
         <div class="card">
             <div class="card-body">
-                <p class="card-text">{{solid}}</p>
-                <a class="btn btn-primary">{{outline}}</a>
+                <h2>{{title}}</h2>
+                <p>{{text}}</p>
+
+                {{#with button_text}}
+
+                <p>
+                    <a class="btn btn-secondary">{{solid}}</a>
+                </p>
+                <button class="btn btn-outline-secondary">{{outline}}</button>
             </div>
         </div>
         {{/with}}
-
+        </div>
         {{/with}}
     </section>
 
     <section>
         {{#with subblock}}
-        <p class="display-2 text-center">{{title}}</p>
-        <p class="text-center">{{text}}</p>
-
-        {{#with button_text}}
         <div class="card">
             <div class="card-body">
-                <p class="card-text">{{solid}}</p>
-                <a class="btn btn-primary">{{outline}}</a>
+                <h3>{{title}}</h3>
+                <p>{{text}}</p>
+
+                {{#with button_text}}
+
+                <p>
+                    <a class="btn btn-dark">{{solid}}</a>
+                </p>
+                <button class="btn btn-outline-dark">{{outline}}</button>
             </div>
         </div>
         {{/with}}
@@ -55,28 +64,34 @@
 
     <section>
         {{#with nested_display}}
-        <p class="display-2 text-center">{{title}}</p>
+        <p class="display-1">{{title}}</p>
 
         {{#with children_display}}
         <div class="card">
             <div class="card-body">
-                <p class="card-text display-6 text-center">{{title}}</p>
-                <p class="card-text text-uppercase">{{text}}</p>
-                <a class="btn btn-primary">
+
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text display-4">{{title}}</p>
+                        <p class="card-text">{{text}}</p>
+                        <a class="btn btn-outline-warning">
+                            {{#with button}}
+                            {{text}}
+                            {{/with}}
+                        </a>
+                    </div>
+                </div>
+
+
+                {{/with}}
+
+                <h6>{{header_text}}</h6>
+                <a class="btn btn-info">
                     {{#with button}}
                     {{text}}
                     {{/with}}
                 </a>
             </div>
-
-            {{/with}}
-
-            <p class="card-text display-6 text-center">{{header_text}}</p>
-            <a class="btn btn-primary">
-                {{#with button}}
-                {{text}}
-                {{/with}}
-            </a>
         </div>
 
 
@@ -86,13 +101,13 @@
     <section>
 
         {{#with paragraph}}
-        <p class="display-2 text-center">{{title}}</p>
         <div class="card">
             <div class="card-body">
-                <p class="text-center">{{text}}</p>
+                <p class="text-uppercase">{{title}}</p>
+                <p>{{text}}</p>
                 {{#with children_display}}
 
-                <p class="card-text display-6 text-center">{{title}}</p>
+                <p class="card-text display-4">{{title}}</p>
                 <p class="card-text text-uppercase">{{text}}</p>
                 <a class="btn btn-primary">
                     {{#with button}}
@@ -102,10 +117,7 @@
 
                 {{/with}}
 
-
-
-
-                <a class="btn btn-primary">
+                <a class="btn btn-link">
                     {{#with button}}
                     {{text}}:
                     {{url}}
