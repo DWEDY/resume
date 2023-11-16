@@ -1,0 +1,71 @@
+{{#each goodsBlock}}
+<div class="card my-3">
+    <div class="card-body row g-0">
+        <div class="col-2">
+            <img src="{{image}}" class="img-fluid rounded" alt="image card">
+        </div>
+
+        <div class="col-4">
+            <h4 class="card-title pb-2">{{name}}</h4>
+
+            <div class="card-text">
+                {{description}}
+            </div>
+        </div>
+
+        {{#with price}}
+        <div class="card-text col-2 mx-3">
+            {{title}} <h5>{{value}}</h5>
+        </div>
+        {{/with}}
+
+        <div class="col-2">
+            {{amount}}
+        </div>
+
+        <div class="col-1">
+            {{#each buttons}}
+            <div class="my-2">
+                {{#if isPrimary}}<buttons class="btn btn-primary"> {{text}} </buttons>{{/if}}
+                {{#if isDanger}}<buttons class="btn btn-outline-danger"> {{text}} </buttons>{{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{/each}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- Якщо використовувати наприклад (goodsBlock)
+вище <div> </div>,
+тоді each буде виводити "КОЖНУ" картку окремо,
+але якщо прописати each в середині card,
+тоді буде тільки одна картка ціла
+для кожних даних які є в змінних. --}}
