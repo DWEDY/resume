@@ -1,0 +1,74 @@
+<body>
+  <main>
+    <div class="my-5">
+      {{#with header}}
+      <p class="display-3">{{title}}</p>
+      {{#with button}}
+      <button class="btn btn-outline-secondary" href="{{link}}">{{text}}</button>
+      {{/with}}
+      {{/with}}
+    </div>
+    <hr class="px-5 py-2">
+    {{> cartGoodsItem}}
+
+    <hr class="px-5 mt-5">
+
+    {{#with total}}
+    <div class="my-5">
+      <h3>{{title}}</h3>
+      <h2>{{amount}}</h2>
+      <p class="mb-2">{{delivery}}</p>
+      {{#each buttons}}
+      <div>
+        {{#if isSuccess}}
+        <button class="btn btn-success mb-4" href="{{link}}">{{text}}</button>
+        {{/if}}
+        {{#if isOutline}}
+        <button class="btn btn-outline-success mb-2" href="{{link}}">{{text}}</button>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{/with}}
+
+    <hr class="px-5 mt-5">
+
+    <div class="row">
+      {{#with goodsOtherBlock}}
+      {{#each cards}}
+      <div class="card col-3 my-4 mx-4 px-0">
+        <img src="{{image}}" class="card-img-top rounded" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{title}} {{#if isHot}}
+            <span class="badge rounded-pill text-bg-primary">
+              Hot!
+            </span>
+            {{/if}}
+            {{#if idNew}}
+            <span class="badge rounded-pill text-bg-warning">
+              New
+            </span>
+            {{/if}}
+          </h5>
+          <p class="card-text">{{description}}</p>
+        </div>
+      </div>
+      {{/each}}
+      {{/with}}
+    </div>
+
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+      <div class="card-body">
+        <h2 class="card-title">{{header}}</h2>
+        <p class="card-text mt-1 mb-3">{{description}}</p>
+        {{#each buttons}}
+        <div class="mt-3">
+          <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/with}}
+  </main>
+</body>
