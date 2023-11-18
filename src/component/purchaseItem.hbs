@@ -1,0 +1,73 @@
+{{#each itemList}}
+<div class="card my-3 text-bg-light">
+    <div class="card-body row g-0">
+        <div class="card-text col-4">
+            <div>{{number}}</div>
+            <h5 class="mt-2">{{status}}</h5>
+        </div>
+        {{#with amount}}
+        <div class="col-2">
+            <div class="card-text">
+                <p>{{title}}:</p>
+                <h5>{{value}}</h5>
+            </div>
+        </div>
+        {{/with}}
+
+        {{#each images}}
+        <div class="col-1">
+            <div class="ms-2">
+                <img class="img-fluid rounded" alt="image card" src="{{this}}">
+            </div>
+        </div>
+        {{/each}}
+
+        {{#with button}}
+        {{#if isPrimary}}
+        <div class="card-text text-end col px-mx-5">
+            <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+        </div>
+        {{/if}}
+        {{/with}}
+    </div>
+</div>
+{{/each}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <div class="col-12 mb-5">
+    <div class="nav nav-tabs">
+
+        <div class="nav-item">
+            <a href="#" class="nav-link 
+            {{#if tabs.[0].isActive}}active{{else}}disabled{{/if}}">
+                {{tabs.[0].text}}
+            </a>
+        </div>
+
+    </div>
+</div>
+</div> --}}
