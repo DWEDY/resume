@@ -1,0 +1,62 @@
+<div class="card list-group-flush" id="card_b">
+  <div>
+    {{#each reviewList}}
+    <div class="card my-3" id="card_a">
+      <div class="card-header" id="card_head">
+        {{#with title}}
+        <p class="m-0">
+          <b>{{userName}}</b>
+        </p>
+        <p class="m-0">{{caption}}</p>
+        <p class="m-0">{{date}}</p>
+        {{/with}}
+      </div>
+
+      <div class="card-body">
+        {{#with reviewBody}}
+        {{#with seller}}
+        <p>{{title}}: {{value}}</p>
+        {{/with}}
+        {{#with rating}}
+        <p>{{title}}: {{value}}</p>
+        {{/with}}
+        <p>{{text}}</p>
+
+        {{#with advantages}}
+        <p class="m-0">
+          <b>{{title}}:</b>
+        <p>{{text}}</p>
+        </p>
+        {{/with}}
+
+        {{#with disadvantages}}
+        <p class="m-0">
+          <b>{{title}}:</b>
+        <p>{{text}}</p>
+        </p>
+        {{/with}}
+
+        {{#each images}}
+        <img class="my-3 mx-1" src="{{this}}" alt="img">
+        {{/each}}
+
+
+        {{#each coments}}
+        <div class="card ms-5 mt-5" id="card_b">
+          <div class="card-body">
+            <p>{{userName}}</p>
+            </p>{{date}}</p>
+            </p>{{text}}</p>
+          </div>
+        </div>
+        {{/each}}
+
+
+        {{/with}}
+
+      </div>
+
+    </div>
+    {{/each}}
+  </div>
+</div>
