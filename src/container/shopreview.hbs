@@ -1,0 +1,122 @@
+<body id="id_body" class="row">
+  <main class="row ms-1">
+    {{#with formBlock}}
+    <div class="col-8">
+      <h1 class="mb-4">{{header}}</h1>
+      {{#with rating}}
+      {{title}}
+      {{value}}
+      {{/with}}
+
+      {{#with actionBlock}}
+      <div class="nav nav-tabs mt-5">
+        {{#each tabs}}
+        <div class="nav-item col-4">
+          {{!-- /////////////////////////IMPORTANT//////////////////////////// --}}
+          {{!-- <div>
+            {{#if @last}}<a href="#" class="nav-link active">{{text}}</a>
+            {{else}} <a href="#" class="nav-link">{{text}}</a>{{/if}}
+          </div> --}}
+          <div>
+            {{#if isActive}}<a href="#" class="nav-link active">{{text}}</a>
+            {{else}} <a href="#" class="nav-link">{{text}}</a>{{/if}}
+          </div>
+          {{!-- /////////////////////////IMPORTANT//////////////////////////// --}}
+        </div>
+        {{/each}}
+      </div>
+      <hr class="my-5">
+      <div class="card" id="card_hover_a">
+        <div class="card-body">
+          {{#with report}}
+          <p class="mb-3">
+            <b>{{title}}</b>
+          </p>
+          {{#with button}}
+          <a href="{{link}}" class="btn btn-outline-secondary button_1">{{text}}</a>
+          {{/with}}
+          {{/with}}
+        </div>
+      </div>
+      <hr class="my-5">
+      {{/with}}
+
+      {{#with feedbackBlock}}
+      <h2 class="my-2">{{title}}</h2>
+      <div class="mt-5 pt-5">
+        <a href="{{link}}" class="btn btn-warning">{{buttons.[0].text}}</a>
+        <a href="{{link}}" class="btn btn-success">{{buttons.[1].text}}</a>
+        <a href="{{link}}" class="btn btn-danger">{{buttons.[2].text}}</a>
+      </div>
+      {{/with}}
+    </div>
+
+    <div class="col-4">
+      <div class="card" id="card_a">
+        {{#with goodsInfo}}
+        <img src="{{photo}}" alt="{{name}}" class="mt-4 me-5 ms-3 rounded-3" height="120" width="130">
+        <p class="m-4 me-2">
+          <b>
+            {{name}}
+          </b>
+        </p>
+      </div>
+
+      <div class="card mt-3 p-3" id="card_hover_a">
+        <h4 class="price_₴">{{price}}</h4>
+        {{#if inMarket}}
+        <p>Є в наявності</p>
+        {{/if}}
+
+        <div>
+          {{#each buttons}}
+          <div class="mt-2">
+            {{#if isPrimary}}
+            <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+            {{/if}}
+          </div>
+          <div class="mt-2">
+            {{#if isSecondary}}
+            <a href="{{link}}" class="btn btn-secondary">{{text}}</a>
+            {{/if}}
+          </div>
+          {{/each}}
+        </div>
+
+      </div>
+
+      <div class="card mt-3 pt-3 ps-3" id="card_a">
+        <p>
+          {{#with seller}}
+          {{title}}:
+          {{value}}
+          {{/with}}
+        </p>
+      </div>
+      {{/with}}
+    </div>
+    {{/with}}
+
+    <hr class="my-5">
+
+    {{> reviewItem}}
+
+
+    <div class="mt-3 p-2">
+      {{#with service}}
+      <div class="card text-bg-success text-center">
+        <div class="card-body">
+          <h2>{{title}}</h2>
+          <p>{{description}}</p>
+          {{#each buttons}}
+          <div>
+            <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/with}}
+    </div>
+
+  </main>
+</body>

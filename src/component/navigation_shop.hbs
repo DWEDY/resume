@@ -1,26 +1,28 @@
-<section class="card text-bg-light">
-    <div class="nav">
-        {{#with navigation}}
+<main class=" m-0 p-3">
+    <section class="card p-4" id="card_hover_a">
+        <div class="nav">
+            {{#with navigation}}
 
-        <div class="nav-item">
-            <a href="{{links.[0].href}}" class="nav-link">{{links.[0].text}}</a>
+            <div class="nav-item">
+                <a href="{{links.[0].href}}" class="nav-link rounded">{{links.[0].text}}</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="{{links.[1].href}}" class="nav-link rounded">{{links.[1].text}}</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="{{links.[2].href}}" class="nav-link rounded">{{links.[2].text}}</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="{{links.[3].href}}" class="nav-link rounded">{{links.[3].text}}</a>
+            </div>
+
+            {{/with}}
         </div>
-
-        <div class="nav-item">
-            <a href="{{links.[1].href}}" class="nav-link">{{links.[1].text}}</a>
-        </div>
-
-        <div class="nav-item">
-            <a href="{{links.[2].href}}" class="nav-link">{{links.[2].text}}</a>
-        </div>
-
-        <div class="nav-item">
-            <a href="{{links.[3].href}}" class="nav-link">{{links.[3].text}}</a>
-        </div>
-
-        {{/with}}
-    </div>
-</section>
+    </section>
+</main>
 
 
 
