@@ -1,50 +1,50 @@
 #card_a {
-  background: #ffffff;
+  background: #bdbdbd;
 }
 
-#card_b {
+/* #card_b {
   background: rgb(51, 47, 53);
-}
+} */
 
-#card_head {
+/* #card_head {
   background: #cbd0d3;
-}
+} */
 
-.card {
-  background: #cbd0d3;
-}
+/* .card {
+  background: #e8ebec;
+} */
 
 footer {
-  background: #b9bdc0;
+  background: #e8ebec;
 }
 
-#card_hover_a:hover {
-  background: #bed6e9;
-}
+/* #card_hover_a:hover {
+  background: #a7abad;
+} */
 
 .nav-link:hover {
-  background: rgb(74, 66, 80);
+  background: rgb(63, 63, 63);
 }
 
 a:nth-child(1),
 a:hover {
-  color: #ffffff;
+  color: #2b2b2b;
 }
 
-#id_body {
+/* #id_body {
   background: rgb(44, 41, 46);
   color: rgb(223, 223, 223);
-}
+} */
 
-.button_1:hover {
+/* .button_1:hover {
   background-color: rgb(47, 185, 155);
   color: rgb(255, 255, 255);
-}
+} */
 
-p {
+/* p {
   color: rgb(46, 46, 46);
-}
+} */
 
-.price_₴ {
+/* .price_₴ {
   color: rgb(46, 46, 46);
-}
+} */

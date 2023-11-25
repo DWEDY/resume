@@ -1,0 +1,154 @@
+<body class="mx-2">
+  <main>
+
+    <div class="row gx-2">
+
+      <nav>
+        <ol class="breadcrumb">
+          {{#each breadcrumb}}
+          {{#unless @last}}
+          <li class="breadcrumb-item">
+            <a href="{{url}}">{{name}}</a>
+          </li>
+          {{else}}
+          <li class="breadcrumb-item active">
+            {{url}}
+            {{name}}
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ol>
+      </nav>
+
+      <div>
+        <label class="form-label">
+          <h1>{{header}}</h1>
+        </label>
+
+        <div class="col-3">
+          {{#each sortBlock}}
+          <select class="form-select m-3">
+            <option selected>{{placeholder}}</option>
+            {{#each options}}
+            <option value="{{value}}">{{text}}</option>
+            {{/each}}
+          </select>
+          {{/each}}
+        </div>
+      </div>
+
+
+      <div class="card col-4 p-2 ps-3" id="card_a">
+        {{#with filterBlock}}
+        <div>
+
+          {{#with sellers}}
+          <p>{{title}}</p>
+          {{#each list}}
+          <div class="form-check">
+            <label class="form-check-label">{{value}}</label>
+            <input name="name" type="checkbox" class="form-check-input">
+          </div>
+          {{/each}}
+          {{/with}}
+
+          <hr class="my-3">
+
+          {{#with brands}}
+
+          <div class="mb-3">
+            <label class="form-label">{{title}}</label>
+            {{#with input}}
+            <input class="form-control" placeholder="{{placeholder}}">
+          </div>
+          {{/with}}
+
+          {{#each options}}
+          <div class="form-check">
+            <label class="form-check-label">{{value}}</label>
+            <input name="name" type="checkbox" class="form-check-input">
+          </div>
+          {{/each}}
+          {{/with}}
+
+          <hr class="my-3">
+
+          {{#with price}}
+          <div>
+
+            {{title}}
+            {{#with range}}
+            <div class="my-2">
+              <input class="form-control" placeholder="{{from}}">
+            </div>
+            <div class="my-2">
+              <input class="form-control" placeholder="{{to}}">
+            </div>
+            {{/with}}
+
+            <div class="my-3">
+              {{#with button}}
+              <a href="{{link}}" class="btn btn-outline-secondary px-3">{{text}}</a>
+              {{/with}}
+            </div>
+
+          </div>
+          {{/with}}
+
+          {{#each filterList}}
+          <hr class="my-3">
+          <p>{{title}}</p>
+          {{#each options}}
+          <div class="form-check">
+            <label class="form-check-label">{{value}}</label>
+            <input name="name" type="checkbox" class="form-check-input">
+          </div>
+          {{/each}}
+          {{/each}}
+
+        </div>
+        {{/with}}
+
+      </div>
+
+      <div class="col-8">
+        <div class="col-6">
+          {{> catalogItem}}
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <div class="mt-3 p-2">
+    {{#with service}}
+    <div class="card text-bg-success text-center">
+      <div class="card-body">
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        {{#each buttons}}
+        <div>
+          <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/with}}
+  </div>
+</body>
+
+
+
+
+
+
+
+{{!-- <li class="breadcrumb-item">
+  <a href="{{url}}">{{breadcrumb.[0].name}}</a>
+</li>
+<li class="breadcrumb-item">
+  <a href="{{url}}">{{breadcrumb.[1].name}}</a>
+</li>
+<li class="breadcrumb-item">
+  <a href="{{url}}">{{breadcrumb.[2].name}}</a>
+</li> --}}
