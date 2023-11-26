@@ -1,72 +1,51 @@
-<body>
-
-    <h1>Web Languages</h1>
+<body class="text-bg-light">
+    <h1 class="card text-center text-bg-primary list-group-flush p-4">Web Languages</h1>
     {{#with web}}
 
-    <main>
+    <main class="col-11 text-bg-secondary rounded">
         <section>
-
-
             {{#each languages}}
             <div>
-
                 <dl>
                     <h2>
                         <b>
                             <span>
-                                <dt>{{name}}</dt>
+                                <dt class="text-center my-2">{{name}}</dt>
                             </span>
                         </b>
                     </h2>
-
-                    <hr>
-                    <br>
-
                     <span>
                         <small>Version: {{version}}</small>
                     </span>
-
-                    <br>
-                    <br>
-
-                    <dd>
-                        <span>
-                            <i>Description -</i>
-                        </span> {{description}}
+                    <dd class="my-3">
+                        <span class="card text-bg-secondary p-4">
+                            <b class="text-bg-primary mb-3 col-2 text-center rounded p-1">Description</b>{{description}}
+                        </span>
                     </dd>
                 </dl>
 
-                <br>
-                <br>
-
                 {{#each elements}}
                 <div>
-                    <span>Elements:</span>
-                    <br>
-                    <ul>
-                        <li>
+                    <ul class="list-group list-group-flush col-8 mb-4">
+                        <span>Elements:</span>
+                        <li class="list-group-item ps-5 p-3">
                             <b>{{name}}</b>
                         </li>
-                        <br>
-                        <dd>
+                        <dd class="list-group-item">
                             <span>
                                 <i>Description -</i>
                             </span> {{description}}
                         </dd>
                     </ul>
-                    <hr>
                     {{#each attributes}}
                     <div>
                         <span>Attributes:</span>
-                        <br>
-
-                        <section>
-                            <li>{{name}}</li>
-                            {{description}}
-                        </section>
+                        <ul class="list-group list-group-flush col-8 mb-4">
+                            <li class="list-group-item">{{name}}</li>
+                            <li class="list-group-item">{{description}}</li>
+                        </ul>
                     </div>
                     {{/each}}
-
                 </div>
                 {{/each}}
 
@@ -74,81 +53,41 @@
                 {{#each properties}}
                 <div>
 
-                    <span>
+                    <ul class="list-group list-group-flush col-8 mb-4">
                         <i>{{../name}} properties:</i>
-                    </span>
-
-                    <br>
-                    <br>
-                    <br>
-
-                    <span>Name:</span> {{name}}
-                    <br>
-
-                    <section>
-                        <span>
-                            <i>Description -</i>
-                        </span> {{description}}
-                    </section>
-
-                    <br>
-
-                    {{#each values}}
-                    <div>
-                        <span>Color:</span> {{value}}
-                        <br>
-                        <br>
-
-                        <section>
-                            <span>
-                                <i>Description -</i>
-                            </span> {{description}}
-                        </section>
-
-                    </div>
-                    {{/each}}
-
+                        <span class="mb-3">Name: {{name}}</span>
+                        <li class="list-group-item mb-3">
+                            <i>Description -</i> {{description}}
+                        </li>
+                        {{#each values}}
+                        <li class="list-group-item mb-3">
+                            <i>Description -</i> {{description}}
+                        </li>
+                        {{/each}}
+                    </ul>
                 </div>
                 {{/each}}
 
                 {{#each functions}}
                 <div>
-
                     <span>Function:</span>
-
-                    <section>
-
-                        <span>Name:</span> {{name}}
-
-                        <br>
-
-                        <section>
-                            <span>
-                                <i>Description -</i>
-                            </span> {{description}}
-                        </section>
-
-                        <br>
-
+                    <ul class="list-group list-group-flush col-8 mb-4">
+                        <span class="list-group-item my-3">Name: {{name}}</span>
+                        <li class="list-group-item mb-3">
+                            <i class="text-bg-info mb-3 col-2 text-center rounded p-1">Description
+                            </i> {{description}}
+                        </li>
                         {{#each parameters}}
                         <div>
-
                             <span>Name:</span> {{name}}
-
-                            <br>
-
                             <span>Type:</span> {{type}}
-
-                            <br>
-                            <br>
-
-                            <section>
-                                <span>
-                                    <i>Description -</i>
-                                </span> {{description}}
-                            </section>
-
-                    </section>
+                            <li class="list-group-item my-3">
+                                <i class="text-bg-info mb-3 col-2 text-center rounded p-1">
+                                    Description
+                                </i>
+                                {{description}}
+                            </li>
+                    </ul>
                 </div>
                 {{/each}}
 

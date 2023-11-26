@@ -1,256 +1,169 @@
 <div>
-
-    <h1>
+    <h1 class="card text-bg-dark p-3 list-group-flush">
         <u>Personal Data :</u>
     </h1>
-
-    <hr>
-
     <main>
-
         <section>
-
-            {{#with person}}
-
-            <div>
-                <h2>
-                    {{name}}
-                </h2>
+            <div class="card mx-5">
+                {{#with person}}
+                <div class="card-header text-bg-primary">
+                    <h2>{{name}}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <b>Age -</b> <i>{{age}}</i>
+                    </div>
+                    <div class="mt-3">
+                        <b>Gender</b> - <i>{{gender}}</i>
+                    </div>
+                    {{#with address}}
+                </div>
+                <div class="card-footer">
+                    <address><b>Address:</b> {{street}} , {{city}} {{zip}} {{state}} , {{country}}</address>
+                </div>
+                {{/with}}
             </div>
 
-            <div>
-                <b>Age -</b> <i>{{age}}</i>
-            </div>
-
-            <div>
-                <b>Gender</b> - <i>{{gender}}</i>
-            </div>
-
-            <br>
-
-            {{#with address}}
-            <div>
-                <b>Address:</b>
-                <address>{{street}} , {{city}} {{zip}} {{state}} , {{country}}</address>
-            </div>
-            {{/with}}
-
-        </section>
-
-        <br>
-        <br>
-
-        <section>
-            <ul>
-                <small>
-                    {{#each education}}
-                    <p>
-                        <b>Degree - </b>{{degree}}
-                    </p>
-                    <p>
-                        <b>Specialization - </b>{{major}}
-                    </p>
-                    <p>
-                        <b>Institution - </b>{{university}}
-                    </p>
-                    <p>
-                        <b>Graduation year - </b>{{graduationYear}}
-                    </p>
-
-                    {{/each}}
-                </small>
+            {{#each education}}
+            <ul class="list-group mx-5 mt-4">
+                <li class="list-group-item"><b>Degree - </b>{{degree}}</li>
+                <li class="list-group-item"><b>Specialization - </b>{{major}}</li>
+                <li class="list-group-item"><b>Institution - </b>{{university}}</li>
+                <li class="list-group-item"><b>Graduation year - </b>{{graduationYear}}</li>
             </ul>
+            {{/each}}
         </section>
-
-        <br>
-        <br>
-
         <div>
+    </main>
 
-            <h2>
-                <u>Work Experience :</u>
-            </h2>
-            <hr>
+    <h2 class="card text-bg-dark p-3 list-group-flush">
+        <u>Work Experience :</u>
+    </h2>
 
-            <br>
-
-            <ul>
-                {{#each workExperience}}
-
-                <p>
-                    <b>Company - </b>{{company}}
-                </p>
-                <p>
-                    <b>Rank - </b>{{title}}
-                </p>
-                <p>
-                    <b>Start Date: </b>{{startDate}}
-                </p>
-                <p>
-                    <b>End Date: </b>{{endDate}}
-                </p>
-
-
-            </ul>
+    <div class="card mx-5 my-5">
+        {{#each workExperience}}
+        <div class="card-header text-bg-warning">
+            <b>Company - </b>{{company}}
         </div>
+        <div class="card-body">
+            <p>
+                <b>Rank - </b>{{title}}
+            </p>
+            <p>
+                <b>Start Date: </b>{{startDate}}
+            </p>
+            <p>
+                <b>End Date: </b>{{endDate}}
+            </p>
+        </div>
+        <div class="card-footer">
+            <b>Responsibilities - </b> {{responsibilities}}
+            <p>
+                Direction - {{industry}}, Year of Foundation {{year_founded}}
+            </p>
+        </div>
+    </div>
+</div>
 
-        <section>
-            <ul>
-                <div>
+<h3 class="card text-bg-dark p-3 list-group-flush">
+    <u>Employees :</u>
+</h3>
 
-                    <b>Responsibilities - </b> {{responsibilities}}
-
+<div>
+    <div>
+        <div class="card mx-5">
+            {{#each employees}}
+            <div>
+                <div class="card-header text-bg-danger p-3">
+                    <h5>{{name}}</h5>
+                    <div class="m-2">
+                        Employee Position - {{position}}
+                    </div>
+                    <div class="mt-2 ms-2">
+                        Department - {{department}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{#each projects}}
                     <p>
-                        Direction - {{industry}} , Year of Foundation {{year_founded}}
+                        <b>Project:</b> {{name}}
                     </p>
+                    <p>
+                        <b>Description:</b> {{description}}
+                    </p>
+                    <p>
+                        <b>Status </b> ( <u>{{status}}</u> )
+                    </p>
+                    <strong>Team Name - </strong> {{#each teams}}
+                    {{team_name}}
 
-                    <br>
-                    <br>
-
-                    <h3>
-                        <u>Employees :</u>
-                    </h3> {{#each employees}}
-                    <hr>
-
-                    <section>
+                    <div>
+                        {{#with team_leader}}
                         <p>
-                            <li>{{name}}</li>
+                            {{name}} , {{title}}
                         </p>
-                        <p>
-                            Employee Position - {{position}}
-                        </p>
-
-                        <p>
-                            Department - {{department}}
-                        </p>
-
-                        <br>
-
-
-                        <section>
-                            {{#each projects}}
-
-                            <p>
-                                <b>Project:</b> {{name}}
-                            </p>
-
-                            <p>
-                                <b>Description:</b> {{description}}
-                            </p>
-
-                            <p>
-                                <b>Status </b> ( <u>{{status}}</u> )
-                            </p>
-
-                            <br>
-                            <br>
-
-                            <strong>Team Name - </strong> {{#each teams}}
-                            {{team_name}}
-
-                            <section>
-                                {{#with team_leader}}
-
-                                <p>
-                                    {{name}} , {{title}}
-                                </p>
-
-                                <p>
-                                    Email: {{> link text=email href=href blank=true noLine=true}}
-                                </p>
-
-                                {{/with}}
-                            </section>
-
-
-                            <br>
-                            <br>
-
-
-                            <b>Team Members:</b>
-                            <hr>
-
-                            <section>
-
-                                {{#each team_members}}
-
-                                <p>
-                                    <li>{{name}}</li>
-                                </p>
-
-                                <p>
-                                    Employee Position - {{title}}
-                                </p>
-
-                                <p>
-                                    Email: {{> link text=email href=href blank=true noLine=true}}
-                                </p>
-
-
-                                <p>
-                                    <b><u>Skills:</u></b>
-                                </p>
-
-                                <ul>
-                                    {{#each skills}}
-                                    <li>{{this}}</li>
-                                    {{/each}}
-                                </ul>
-
-                                {{#each projects}}
-
-                                <p>
-                                    <b>Project:</b> {{name}}
-                                </p>
-                                <p>
-                                    <b>Description:</b> {{description}}
-                                </p>
-
-                                <p>
-                                    <b><u>Technologies:</u></b>
-                                </p>
-                                <ul>
-                                    {{#each technologies}}
-
-                                    <li>{{this}}</li>
-
-                                    {{/each}}
-                                </ul>
-
-                                <br>
-                                <br>
-
-                                <b>Team Members:</b>
-                                <hr>
-
-                                {{#each team_members}}
-
-                                <li>{{name}}</li>
-                                <p>
-                                    <u>{{title}}</u>
-                                </p>
-
-                                {{/each}}
-                                {{/each}}
-                                {{/each}}
-                                {{/each}}
-                                {{/each}}
-                            </section>
-
-                        </section>
-
-                    </section>
-
-                    {{/each}}
-
+                        <a class="btn btn-primary px-3 py-2 mb-1" href="#">Email: {{email}}</a>
+                        {{/with}}
+                    </div>
                 </div>
 
-            </ul>
-        </section>
+                <div class="card-header text-bg-success">Team Members:</div>
+                <ul class="list-group list-group-flush text-bg-light">
+                    {{#each team_members}}
+                    <li class="list-group-item p-3 py-1 mt-2">
+                        <h5 class="mb-2">{{name}}</h5>
+                        <div class="pb-1 mb-2">
+                            Employee Position - {{title}}
+                        </div>
+                        <a class="btn btn-primary px-3 py-2 mb-3">Email: {{email}}</a>
+                    </li>
 
-        {{/each}}
+                    <li class="list-group-item text-bg-dark">
+                        <h5><u>Skills:</u></h5>
+                    </li>
+                    <ul class="list-group my-3">
+                        {{#each skills}}
+                        <li class="list-group-item mx-5 py-4">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{#each projects}}
+                    <li class="list-group-item py-4">
+                        <b>Project:</b> {{name}}
+                    </li>
+                    <li class="list-group-item py-4">
+                        <b>Description:</b> {{description}}
+                    </li>
+                    <li class="list-group-item text-bg-dark">
+                        <b><u>Technologies:</u></b>
+                    </li>
 
-        {{/with}}
+                    <ul class="list-group my-3">
+                        {{#each technologies}}
+                        <li class="list-group-item mx-5 py-4">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    <div class="card-header text-bg-success">Team Members:</div>
 
-    </main>
+                    {{#each team_members}}
+                    <ul class="my-3 rounded me-4">
+                        <li class="list-group-item p-3 py-1">{{name}}
+                            <p class="my-3">
+                                <u>{{title}}</u>
+                            </p>
+                        </li>
+                    </ul>
+
+                    {{/each}}
+                    {{/each}}
+                    {{/each}}
+                    {{/each}}
+                    {{/each}}
+                </ul>
+
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/each}}
+    {{/with}}
 </div>

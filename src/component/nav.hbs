@@ -1,7 +1,8 @@
 <nav>
-    {{> link text="/Summary" href="/summary" line=true }}
-    {{> link text="/Skills" href="/skills" line=true }}
-    {{> link text="/Education" href="/education" line=true }}
-    {{> link text="/Work" href="/work" line=false noLine=true}}
-    {{!-- {{> link text="/Program" href="/program" line=false noLine=true}} --}}
+    <ul class="nav nav-tabs">
+        {{> link text="Summary" href="/summary" active=true }}
+        {{> link text="Skills" href="/skills" active=false }}
+        {{> link text="Education" href="/education" active=false }}
+        {{> link text="Work" href="/work" active=false }}
+    </ul>
 </nav>

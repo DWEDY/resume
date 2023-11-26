@@ -1,51 +1,39 @@
-<div>
-    <main>
+<body class="text-bg-dark">
+    {{#with program}}
+
+    {{#with excursion}}
+    <h1 class="card text-bg-warning list-group-flush p-4">
+        <i>{{name}}</i>
+    </h1>
+
+    <main class=" col-10">
         <section>
-
-            {{#with program}}
-
-            {{#with excursion}}
-
-
-            <h1>
-                <i>{{name}}</i>
-            </h1>
             {{#with location}}
-            <p>A tour to the cultural capital of {{country}}, {{city}}.</p>
+            <p class="m-0 ms-5">A tour to the cultural capital of {{country}}, {{city}}.</p>
             {{/with}}
-
-            <em>
+            <em class="badge text-bg-info mb-5 ms-5">
                 <small>{{date}}</small>
             </em>
 
-            <br>
-            <hr>
-            <br>
-
             {{#each program}}
 
-            <table>
-
+            <table class="table table-striped table-bordered text-bg-light mx-5 my-5">
                 <tr>
-                    <th colspan="5">
+                    <th colspan="5" class="text-bg-info p-3">
                         <h3>
                             <i>{{name}}</i>
                         </h3>
-                        <hr>
                     </th>
                 </tr>
-
                 <tr>
                     <td colspan="2">
                         <i>
                             <b>Type:</b>
                         </i>
                     </td>
-
                     <td>{{type}}</td>
                     <td>{{deatails}}</td>
                 </tr>
-
                 <tr>
                     <td colspan="2">
                         <i>
@@ -54,7 +42,6 @@
                     </td>
                     <td>{{duration}} hours</td>
                 </tr>
-
                 <tr>
                     <td colspan="2">
                         <i>
@@ -63,7 +50,6 @@
                     </td>
                     <td>
                         {{#with details}}
-
                         {{#with museum}}
                         <strong>
                             {{name}}
@@ -77,14 +63,12 @@
                             {{country}}.
                         </small>
                         {{/with}}
-
                 </tr>
                 <td>
                     <i>
                         <b>Exhibits:</b>
                     </i>
                 </td>
-
                 <td>
                     {{#each exhibits}}
                 <td>
@@ -96,19 +80,12 @@
                         {{> program}}
                     </small>
                 </td>
-
-
                 {{/each}}
                 </td>
                 </tr>
-
                 {{/with}}
-
                 {{/with}}
-
-
                 {{#with details}}
-
                 {{#with venue}}
                 <strong>
                     {{name}}
@@ -140,7 +117,6 @@
                         {{/each}}
                     </td>
                 </tr>
-
                 <td>
                     <tr>
                         {{#with guide}}
@@ -161,13 +137,10 @@
                                 Rating: <b>{{rating}}</b>
                             </small>
                         </td>
-
                         {{/with}}
                     </tr>
                 </td>
-
                 {{/with}}
-
             </table>
 
             {{/each}}
@@ -178,4 +151,4 @@
 
         </section>
     </main>
-</div>
+</body>

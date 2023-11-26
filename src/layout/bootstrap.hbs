@@ -29,6 +29,23 @@
 			color: black;
 		}
 	</style>
+	{{!-- //////////////////////////////////////Перемикання між сторінками///////////////////////////////////////// --}}
+	<nav class="navbar navbar-expand-lg text-bg-my-color m-0 p-2">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">
+				<i class="fa-solid fa-r" style="color: #3061b4;">esume - Project</i>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa-solid fa-bars fa-2xs" style="color: #3061b4;"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				{{> nav_links}}
+			</div>
+		</div>
+	</nav>
+	{{!-- //////////////////////////////////////Перемикання між сторінками///////////////////////////////////////// --}}
+
 </head>
 
 <body>

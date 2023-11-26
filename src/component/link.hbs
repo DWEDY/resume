@@ -1,13 +1,12 @@
-<a href="{{href}}" {{#if blank}} target="_blank" {{/if}}>{{text}}</a>
+{{!-- <a href="{{href}}" {{#if blank}} target="_blank" {{/if}}>{{text}}</a> --}}
+{{#if active}}
+<li class="nav-item">
+    <a class="nav-link active" aria-current="date" href="{{href}}">{{text}}</a>
+</li>
 
-
-
-{{#unless noLine}}
-
-{{#if line}}
----
+{{!-- page, step, location, date --}}
 {{else}}
-/
+<li class="nav-item">
+    <a class="nav-link" href="{{href}}">{{text}}</a>
+</li>
 {{/if}}
-
-{{/unless}}

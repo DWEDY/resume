@@ -41,7 +41,9 @@ router.get('/', function (req, res) {
    // res.render генерує нам HTML сторінку
 
    //            ↙ cюди вводимо назву файлу з сontainer
-   res.render('index', {})
+   res.render('index', {
+      layout: "index",
+   })
    //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -282,7 +284,7 @@ router.get('/work', function (req, res) {
                projects: [
                   {
                      name: 'Resume',
-                     url: 'https://resume.com.ua/',
+                     url: 'http://localhost:3000/',
                      about: 'Airbnb competitor. High-load application for searching apartments',
 
                      stacks: [

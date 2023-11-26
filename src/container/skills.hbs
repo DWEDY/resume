@@ -5,13 +5,13 @@
 
 <div>
     {{#with main}}
-    <main>
+    <main class="card text-bg-dark">
         <section>
             {{> title data="All skills" big=true}}
 
-            <ul>
+            <ul class="card text-bg-secondary">
                 {{#each skills}}
-                <li>
+                <li class="m-2">
                     {{name}}
 
                     {{#if point includeZero=true}} ({{point}}) {{/if}}
@@ -32,9 +32,9 @@
         <section>
             {{> title data="My hobbies" big=true}}
 
-            <ol>
+            <ol class="card text-bg-secondary">
                 {{#each hobbies}}
-                <li>
+                <li class="m-2">
                     {{name}}
 
                     {{#if isMain}} (favourite) {{/if}}
