@@ -7,90 +7,71 @@
   {{#with main}}
   <main>
     <section>
+      <div class="text-center mt-3">
+        {{> title data="Work History" big=true}}
+      </div>
 
-      {{> title data="Work History" big=true}}
       <div>
         <ul>
-
           {{#each works}}
-          <li>
-            <div>{{position}}</div>
-
-            <br>
-
-            <div>
+          <li class="card text-bg-secondary p-4">
+            <div class="card text-center text-bg-light">
+              <h3 class="my-3">{{position}}</h3>
+            </div>
+            <div class="my-3">
               {{#with duration}}
-              {{from}} - {{#if to}} {{to}} {{else}} (досі працюємо) {{/if}}
+              {{from}} - {{#if to}} {{to}} {{else}} <div class="badge bg-primary rounded p-2">досі працюємо</div>
+              {{/if}}
               {{/with}}
             </div>
 
-            <br>
-
-            <div>
-
+            <div class="my-3">
               {{#if company.url}}
-
               {{> link text=company.name href=company.url blank=true noLine=true}}
-
               {{else}}
-              <b>{{company.name}}</b>
-
+              <h4>{{company.name}}</h4>
               {{/if}}
-
             </div>
 
-
-            <br>
-            <br>
-
-            <div>
-              <strong>Projects:</strong> ({{projectAmount}})
+            <div class="my-3">
+              <strong>Projects:</strong>
+              <div class="badge bg-warning rounded p-2">{{projectAmount}}</div>
             </div>
 
-            <br>
-
-            <ul>
+            <div class="card text-bg-light pb-5 ps-3">
               {{#each projects}}
-              <li>
-                <div>
-                  <h3>{{> link text=name href=url blank=true noLine=true}}</h3>
+              <div>
+                <div class="mt-3">
+                  <a href="{{url}}" class="btn btn-success btn-lg">{{name}}</a>
                 </div>
-
-                <br>
-
-                <div>
+                <div class="pt-3">
                   <p>{{about}}</p>
                 </div>
 
-                <br>
-                <br>
+                <div class="mt-4">
+                  <ul class="list-group">
 
-                <div><em>Project stacks</em> ({{stackAmount}}) </div>
-
-                <br>
-
-                <div>
-                  <ul>
+                    <li class="list-group-item active col-4">
+                      <b>Project stacks</b>
+                      <div class="badge bg-warning rounded p-2">{{stackAmount}}</div>
+                    </li>
                     {{#each stacks}}
-                    <li>{{name}}</li>
+                    <li class="list-group-item col-4">{{name}}</li>
                     {{/each}}
                   </ul>
                 </div>
 
-                <br>
-                <br>
-
-                <div>
-                  <ul>
+                <div class="mt-3">
+                  <ul class="list-group">
                     {{#each awards}}
-                    <li>{{name}}</li>
+                    <li class="list-group-item col-8">{{name}}</li>
                     {{/each}}
                   </ul>
                 </div>
 
-              </li>
+              </div>
               {{/each}}
-            </ul>
+            </div>
 
           </li>
 

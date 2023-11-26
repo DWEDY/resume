@@ -6,12 +6,12 @@
 <div>
     {{#with main}}
 
-    <main>
+    <main class="card text-bg-dark">
         <section>
             {{> title data="My educations" big=true}}
-            <ul class="ps-5">
+            <ul class="card text-bg-secondary p-4">
                 {{#each educations}}
-                <li>
+                <li class="my-2">
                     {{name}}
 
                     {{#unless isEnd}}(ще в процесі){{/unless}}
@@ -23,9 +23,9 @@
 
         <section>
             {{> title data="My certificates" big=true}}
-            <ul class="ps-5">
+            <ul class="card text-bg-secondary p-4">
                 {{#each certificates}}
-                <li>
+                <li class="my-3">
                     {{name}} ({{id}})
                 </li>
                 {{/each}}

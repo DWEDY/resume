@@ -1,3 +1,15 @@
+.text-bg-old_paper {
+  background: #bba087;
+}
+
+.text-bg-old_paper_title {
+  background: #ddbea0;
+}
+
+.text-bg-my-color {
+  background: #ffb078;
+}
+
 #card_a {
   background: #bdbdbd;
 }
@@ -26,10 +38,10 @@ footer {
   background: rgb(63, 63, 63);
 }
 
-a:nth-child(1),
+/* a:nth-child(1),
 a:hover {
   color: #2b2b2b;
-}
+} */
 
 /* #id_body {
   background: rgb(44, 41, 46);

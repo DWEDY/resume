@@ -1,51 +1,53 @@
-<div>
-    <h1>
+<div class="text-bg-old_paper">
+    <h1 class="card list-group-flush text-bg-dark p-3">
         <u>Biography of {{name}}</u>
     </h1>
-
     <main>
         <section>
-            <p>
-            <h1>{{name}}</h1>
-            Was born in {{birthdate}}, in the city {{birthplace}}.
-            <br>
-            Died in {{deathdate}}, in the city {{deathplace}}.
-            </p>
-            <b>{{name}}</b> was {{nationality}} by nationality.
 
-            <p>
-                <b>Occupation</b> {{occupation}}.
-            <p>
-                <b>Known for</b> {{#each known_for}}
-                {{this}},
-                {{/each}}
-            </p>
+            <h1 class="card text-bg-old_paper_title p-3 mb-5">{{name}}</h1>
 
-            </p>
 
-            {{#each education}}
-            <b>He received</b> a {{degree}}
-            in the field of {{field}},
-            from the {{ institution}} in
-            {{year}} year.
-            {{/each}}
-            <p>
-                <br>
+            <div class="card text-bg-old_paper my-5">
+                <div class="card-header">
+                    Was born in {{birthdate}}, in the city {{birthplace}}.
+                    <br>
+                    Died in {{deathdate}}, in the city {{deathplace}}.
+                </div>
+                <div class="card-body">
+                    <div class="my-3">
+                        <b>{{name}}</b> was {{nationality}} by nationality.
+                    </div>
+                    <p>
+                        <b>Occupation</b> {{occupation}}.
+                    <p>
+                        <b>Known for</b> {{#each known_for}}
+                        {{this}},
+                        {{/each}}
+                    </p>
 
-            <h3><i>List of scientific publications:</i></h3>
+                    {{#each education}}
+                    <b>He received</b> a {{degree}}
+                    in the field of {{field}},
+                    from the {{ institution}} in
+                    {{year}} year.
+                    {{/each}}
+                    <p>
+                </div>
+            </div>
 
+
+            <h3 class="card text-bg-old_paper_title p-3"><i>List of scientific publications:</i></h3>
             <section>
-                <ul>
-                    <li>
+                <ul class="list-group my-3">
+                    <li class="list-group-item p-3 text-bg-old_paper_title">
                         <b>Notable publications</b> {{notable_publications.[0].title}}.
                         <br>
                         <b>Year</b> {{notable_publications.[0].year}}.
                         <br>
                         <b>Publisher</b> {{notable_publications.[0].publisher}}.
                     </li>
-                    <br>
-
-                    <li>
+                    <li class="list-group-item p-3 text-bg-old_paper_title">
                         <b>Notable publications</b> {{notable_publications.[1].title}}.
                         <br>
                         <b>Year</b> {{notable_publications.[1].year}}.
@@ -54,94 +56,86 @@
                     </li>
                 </ul>
             </section>
-            </p>
 
-            <p>
+            <h3 class="card text-bg-old_paper_title p-3"><i> Relationships:</i></h3>
 
-                <br>
+            <div class="card text-bg-old_paper my-5 p-3">
+                <p>During lifetime, <i>{{name}}</i> got married twice.</p>
+                <p> His {{partners.[0].relationship}} was to <i>{{partners.[0].name}}</i>,
+                    {{partners.[0].years}} years.</p>
+                <p> And {{name}} {{partners.[1].relationship}} <i>{{partners.[1].name}}</i>,
+                    {{partners.[0].years}} years.</p>
+            </div>
 
-            <h3><i> Relationships:</i></h3>
-            During lifetime, <i>{{name}}</i> got married twice.
-            <br>
-            <br>
+            <h2 class="card text-bg-old_paper_title p-3">Award</h2>
+            <div class="card text-bg-old_paper my-3">
+                <div class="card-header p-3">
+                    {{#each awards}}
+                    <strong>{{title}}</strong>
+                </div>
+                <div class="card-body list-group-flush my-3">
+                    {{year}} year,
+                    {{description}}.
+                    {{/each}}
+                </div>
 
-            His {{partners.[0].relationship}} was to <i>{{partners.[0].name}}</i>,
-            <br>
-            {{partners.[0].years}} years.
-            <br>
-            <br>
-            And {{name}} {{partners.[1].relationship}} <i>{{partners.[1].name}}</i>,
-            <br>
-            {{partners.[0].years}} years.
+                <div class="card-header p-2">
+                    <b>Influences by</b>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {{#each influences}}
+                    <li class="list-group-item text-bg-old_paper ps-5 my-1">{{this}}</li>
+                    {{/each}}
+                </ul>
 
-            </p>
+                <div class="card-header p-2">
+                    <b>Influences by</b>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {{#each influenced}}
+                    <li class="list-group-item text-bg-old_paper ps-5 my-1">{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
 
-            <br>
-            <hr>
 
-            <h2>Award</h2>
-            <br>
-            {{#each awards}}
-            <strong>{{title}}</strong>,
-            <br>
-            {{year}} year,
-            <br>
-            {{description}}.
-            {{/each}}
+            <h3 class="card text-bg-old_paper_title p-3"><i>Quotes:</i></h3>
 
-            <hr>
-            <br>
 
-            <b>Influences by</b>
-            <ul>
-                {{#each influences}}
-                <li>{{this}}</li>
+            <ul class="list-group text-center mb-5">
+                {{#each quotes}}
+                <li class="list-group-item text-bg-old_paper_title p-4">"{{this}}"</li>
                 {{/each}}
             </ul>
-            <br>
-            <b>Influenced by</b>
-            <ul>
-                {{#each influenced}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
 
-            <h3><i>Quotes:</i></h3>
 
-            <br>
+            <h2 class="card text-bg-old_paper_title p-3">Major Discoveries</h2>
 
-            {{#each quotes}}
-            <li>"{{this}}"</li>
-            {{/each}}
+            <div class="card text-bg-old_paper my-5">
+                <div class="card-header">
+                    {{#each major_discoveries}}
+                    <i><b>{{title}}</b></i>
+                    {{year}} year
+                </div>
+                <div class="p-3">
+                    {{description}}
+                    {{/each}}
+                </div>
+            </div>
 
-            <br>
-            <hr>
-
-            <h2>Major Discoveries</h2>
-            {{#each major_discoveries}}
-            <i><b>{{title}}</b></i>,
-            {{year}} year,
-            <br>
-            {{description}}
-            {{/each}}
-
-            <hr>
-            <br>
-
-            <h2>Contributions</h2>
-            {{#with contributions}}
-            <i><b>{{title}}</b></i>:
-            <br>
-            <br>
-            <b>Description:</b> {{description}}
-            {{year}} year,
-            <br>
-            <br>
-            <i>The field of {{field}}</i>.
-            {{/with}}
-
-            <hr>
-
+            <div class="card text-bg-old_paper mb-5">
+                <h2 class="card-header text-bg-old_paper_title p-3">Contributions</h2>
+                <div class="card-body p-5">
+                    {{#with contributions}}
+                    <i>
+                        <b>{{title}}</b>:
+                        <b>Description:</b> {{description}}
+                        {{year}} year,
+                        The field of {{field}}
+                    </i>.
+                    {{/with}}
+                </div>
+            </div>
         </section>
     </main>
 </div>
